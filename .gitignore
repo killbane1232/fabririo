@@ -1,0 +1,30 @@
+# Binaries
+huginn-messenger
+huginn
+*.exe
+*.test
+
+# Test artifacts
+test_dir/
+bin/
+artifacts/
+
+# Go workspace
+go.work
+go.work.sum
+
+# OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+**.db*
+build.sh
+libhuginn_messenger.h
+libhuginn_messenger.so

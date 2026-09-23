@@ -1,0 +1,12 @@
+package ledger
+
+import (
+    "context"
+    "database/sql"
+)
+
+// Save доставляет обработанный груз на склад.
+func Save(ctx context.Context, db *sql.DB, parcel string) error {
+    _, err := db.ExecContext(ctx, "INSERT INTO parcels (label) VALUES (?)", parcel)
+    return err
+}

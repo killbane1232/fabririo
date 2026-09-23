@@ -1,0 +1,1040 @@
+[
+  {
+    "name": "entry function",
+    "focus": "github.com/killbane1232/huginn-messenger.main",
+    "view": {
+      "nodes": [
+        {
+          "id": "n16069",
+          "kind": "source",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": -1
+        },
+        {
+          "id": "n16078",
+          "kind": "source",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": -1
+        },
+        {
+          "id": "n16065",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 0
+        },
+        {
+          "id": "n25488",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 0
+        },
+        {
+          "id": "n25492",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 0
+        },
+        {
+          "id": "n16066",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 1
+        },
+        {
+          "id": "n16067",
+          "kind": "splitter",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 2
+        },
+        {
+          "id": "n16068",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 3
+        },
+        {
+          "id": "n16070",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 4
+        },
+        {
+          "id": "n16072",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 6
+        },
+        {
+          "id": "n25489",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 6
+        },
+        {
+          "id": "n16073",
+          "kind": "splitter",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 7
+        },
+        {
+          "id": "n16074",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 8
+        },
+        {
+          "id": "n16076",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 10
+        },
+        {
+          "id": "n25490",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 10
+        },
+        {
+          "id": "n16077",
+          "kind": "splitter",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 11
+        },
+        {
+          "id": "n25491",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 12
+        },
+        {
+          "id": "n16081",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 14
+        },
+        {
+          "id": "n25493",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 16
+        },
+        {
+          "id": "n16084",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 17
+        },
+        {
+          "id": "n16086",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 19
+        },
+        {
+          "id": "n16087",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 20
+        },
+        {
+          "id": "n16089",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 22
+        },
+        {
+          "id": "n25494",
+          "kind": "trash",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 22
+        },
+        {
+          "id": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "section:github.com/killbane1232/huginn-messenger.main:1",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 100001,
+          "helper": false,
+          "isPortal": false,
+          "isSection": true,
+          "isSectionHub": false
+        },
+        {
+          "id": "section:github.com/killbane1232/huginn-messenger.main:2",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger.main",
+          "order": 100002,
+          "helper": false,
+          "isPortal": false,
+          "isSection": true,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:github.com/killbane1232/huginn-messenger/internal/muninn.NewClient",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger/internal/muninn.NewClient",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:github.com/killbane1232/huginn-messenger/internal/messenger.New",
+          "kind": "station",
+          "function": "github.com/killbane1232/huginn-messenger/internal/messenger.New",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:github.com/killbane1232/huginn-messenger/internal/messenger.WithPeerFlag",
+          "kind": "machine",
+          "function": "github.com/killbane1232/huginn-messenger/internal/messenger.WithPeerFlag",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        }
+      ],
+      "edges": [
+        {
+          "id": "n16065|n17481|call",
+          "from": "n16065",
+          "to": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "kind": "call"
+        },
+        {
+          "id": "n16065|n16066|belt",
+          "from": "n16065",
+          "to": "n16066",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16070|belt",
+          "from": "n16065",
+          "to": "n16070",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16074|belt",
+          "from": "n16065",
+          "to": "n16074",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16081|belt",
+          "from": "n16065",
+          "to": "n16081",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16087|belt",
+          "from": "n16065",
+          "to": "n16087",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16091|belt",
+          "from": "n16065",
+          "to": "section:github.com/killbane1232/huginn-messenger.main:1",
+          "kind": "belt"
+        },
+        {
+          "id": "n16065|n16129|belt",
+          "from": "n16065",
+          "to": "section:github.com/killbane1232/huginn-messenger.main:2",
+          "kind": "belt"
+        },
+        {
+          "id": "n16066|n16067|belt",
+          "from": "n16066",
+          "to": "n16067",
+          "kind": "belt"
+        },
+        {
+          "id": "n16069|n16077|belt",
+          "from": "n16069",
+          "to": "n16077",
+          "kind": "belt"
+        },
+        {
+          "id": "n16069|n25488|disposal",
+          "from": "n16069",
+          "to": "n25488",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16070|n16072|belt",
+          "from": "n16070",
+          "to": "n16072",
+          "kind": "belt"
+        },
+        {
+          "id": "n16070|n25489|disposal",
+          "from": "n16070",
+          "to": "n25489",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16072|n16073|belt",
+          "from": "n16072",
+          "to": "n16073",
+          "kind": "belt"
+        },
+        {
+          "id": "n16074|n16076|belt",
+          "from": "n16074",
+          "to": "n16076",
+          "kind": "belt"
+        },
+        {
+          "id": "n16074|n18694|call",
+          "from": "n16074",
+          "to": "portal:github.com/killbane1232/huginn-messenger/internal/muninn.NewClient",
+          "kind": "call"
+        },
+        {
+          "id": "n16074|n25490|disposal",
+          "from": "n16074",
+          "to": "n25490",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16076|n16077|belt",
+          "from": "n16076",
+          "to": "n16077",
+          "kind": "belt"
+        },
+        {
+          "id": "n16077|n16104|belt",
+          "from": "n16077",
+          "to": "section:github.com/killbane1232/huginn-messenger.main:1",
+          "kind": "belt"
+        },
+        {
+          "id": "n16077|n17752|call",
+          "from": "n16077",
+          "to": "portal:github.com/killbane1232/huginn-messenger/internal/messenger.New",
+          "kind": "call"
+        },
+        {
+          "id": "n16077|n25491|disposal",
+          "from": "n16077",
+          "to": "n25491",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16078|n25492|disposal",
+          "from": "n16078",
+          "to": "n25492",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16081|n25493|disposal",
+          "from": "n16081",
+          "to": "n25493",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16081|n16084|belt",
+          "from": "n16081",
+          "to": "n16084",
+          "kind": "belt"
+        },
+        {
+          "id": "n16081|n18280|call",
+          "from": "n16081",
+          "to": "portal:github.com/killbane1232/huginn-messenger/internal/messenger.WithPeerFlag",
+          "kind": "call"
+        },
+        {
+          "id": "n16086|n16098|belt",
+          "from": "n16086",
+          "to": "section:github.com/killbane1232/huginn-messenger.main:1",
+          "kind": "belt"
+        },
+        {
+          "id": "n16087|n16089|belt",
+          "from": "n16087",
+          "to": "n16089",
+          "kind": "belt"
+        },
+        {
+          "id": "n16087|n25494|disposal",
+          "from": "n16087",
+          "to": "n25494",
+          "kind": "disposal"
+        },
+        {
+          "id": "n16089|n16090|belt",
+          "from": "n16089",
+          "to": "section:github.com/killbane1232/huginn-messenger.main:1",
+          "kind": "belt"
+        },
+        {
+          "id": "n17481|n25493|disposal",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n25493",
+          "kind": "disposal"
+        },
+        {
+          "id": "n17481|n16084|memory",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n16084",
+          "kind": "memory"
+        },
+        {
+          "id": "n17501|n16072|memory",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n16072",
+          "kind": "memory"
+        },
+        {
+          "id": "n17501|n25489|disposal",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n25489",
+          "kind": "disposal"
+        },
+        {
+          "id": "n17501|n16076|memory",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n16076",
+          "kind": "memory"
+        },
+        {
+          "id": "n17501|n25490|disposal",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n25490",
+          "kind": "disposal"
+        },
+        {
+          "id": "n17546|n16065|return",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/config.Parse",
+          "to": "n16065",
+          "kind": "return"
+        },
+        {
+          "id": "n18285|n16084|return",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/messenger.WithPeerFlag",
+          "to": "n16084",
+          "kind": "return"
+        },
+        {
+          "id": "n18704|n16076|return",
+          "from": "portal:github.com/killbane1232/huginn-messenger/internal/muninn.NewClient",
+          "to": "n16076",
+          "kind": "return"
+        }
+      ]
+    }
+  },
+  {
+    "name": "large function",
+    "focus": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+    "view": {
+      "nodes": [
+        {
+          "id": "n2477",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2478",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2479",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2527",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2552",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2596",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n2657",
+          "kind": "source",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": -1
+        },
+        {
+          "id": "n23072",
+          "kind": "trash",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 0
+        },
+        {
+          "id": "n23081",
+          "kind": "trash",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 0
+        },
+        {
+          "id": "n23095",
+          "kind": "trash",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 0
+        },
+        {
+          "id": "n2481",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 1
+        },
+        {
+          "id": "n2482",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 2
+        },
+        {
+          "id": "n2483",
+          "kind": "splitter",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 3
+        },
+        {
+          "id": "n2486",
+          "kind": "output",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 6
+        },
+        {
+          "id": "n2487",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 7
+        },
+        {
+          "id": "n2488",
+          "kind": "splitter",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 8
+        },
+        {
+          "id": "n2490",
+          "kind": "output",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 10
+        },
+        {
+          "id": "n2491",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 11
+        },
+        {
+          "id": "n2492",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 12
+        },
+        {
+          "id": "n2494",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 14
+        },
+        {
+          "id": "n23061",
+          "kind": "trash",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 14
+        },
+        {
+          "id": "n2495",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 15
+        },
+        {
+          "id": "n2497",
+          "kind": "splitter",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 17
+        },
+        {
+          "id": "n23062",
+          "kind": "trash",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 18
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).tryProcessMsg",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).tryProcessMsg",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).releaseProcessMsg",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).releaseProcessMsg",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage",
+          "order": 100001,
+          "helper": false,
+          "isPortal": false,
+          "isSection": false,
+          "isSectionHub": true
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).getChunkData",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).getChunkData",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).findPeerByKey",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).findPeerByKey",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkInviteText",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkInviteText",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).processReceivedFile",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).processReceivedFile",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).FindMessageById",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).FindMessageById",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).DeleteFailedMessage",
+          "kind": "warehouse",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).DeleteFailedMessage",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).StoreFailedChunk",
+          "kind": "warehouse",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).StoreFailedChunk",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).SaveMessage",
+          "kind": "warehouse",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).SaveMessage",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        },
+        {
+          "id": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "kind": "machine",
+          "function": "(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "order": 100000,
+          "helper": false,
+          "isPortal": true,
+          "isSection": false,
+          "isSectionHub": false
+        }
+      ],
+      "edges": [
+        {
+          "id": "n2201|n2477|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "to": "n2477",
+          "kind": "call"
+        },
+        {
+          "id": "n2362|n2478|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "to": "n2478",
+          "kind": "call"
+        },
+        {
+          "id": "n2363|n2479|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "to": "n2479",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n2487|belt",
+          "from": "n2477",
+          "to": "n2487",
+          "kind": "belt"
+        },
+        {
+          "id": "n2477|n7700|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).tryProcessMsg",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n2491|belt",
+          "from": "n2477",
+          "to": "n2491",
+          "kind": "belt"
+        },
+        {
+          "id": "n2477|n6905|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).releaseProcessMsg",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n2492|belt",
+          "from": "n2477",
+          "to": "n2492",
+          "kind": "belt"
+        },
+        {
+          "id": "n2477|n2500|belt",
+          "from": "n2477",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2477|n3792|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).getChunkData",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n3522|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).findPeerByKey",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n2027|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkInviteText",
+          "kind": "call"
+        },
+        {
+          "id": "n2477|n6032|call",
+          "from": "n2477",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).processReceivedFile",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n2487|belt",
+          "from": "n2478",
+          "to": "n2487",
+          "kind": "belt"
+        },
+        {
+          "id": "n2478|n7701|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).tryProcessMsg",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n2491|belt",
+          "from": "n2478",
+          "to": "n2491",
+          "kind": "belt"
+        },
+        {
+          "id": "n2478|n6906|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).releaseProcessMsg",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n2494|belt",
+          "from": "n2478",
+          "to": "n2494",
+          "kind": "belt"
+        },
+        {
+          "id": "n2478|n11345|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).FindMessageById",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n2502|belt",
+          "from": "n2478",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2478|n10954|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).DeleteFailedMessage",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n13723|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).StoreFailedChunk",
+          "kind": "call"
+        },
+        {
+          "id": "n2478|n13452|call",
+          "from": "n2478",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).SaveMessage",
+          "kind": "call"
+        },
+        {
+          "id": "n2479|n2481|belt",
+          "from": "n2479",
+          "to": "n2481",
+          "kind": "belt"
+        },
+        {
+          "id": "n2479|n2506|belt",
+          "from": "n2479",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2481|n2482|belt",
+          "from": "n2481",
+          "to": "n2482",
+          "kind": "belt"
+        },
+        {
+          "id": "n2482|n2483|belt",
+          "from": "n2482",
+          "to": "n2483",
+          "kind": "belt"
+        },
+        {
+          "id": "n2486|n2364|return",
+          "from": "n2486",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "kind": "return"
+        },
+        {
+          "id": "n2486|n7304|return",
+          "from": "n2486",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "kind": "return"
+        },
+        {
+          "id": "n2487|n2488|belt",
+          "from": "n2487",
+          "to": "n2488",
+          "kind": "belt"
+        },
+        {
+          "id": "n2490|n2364|return",
+          "from": "n2490",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).checkRecipientMessages",
+          "kind": "return"
+        },
+        {
+          "id": "n2490|n7304|return",
+          "from": "n2490",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "kind": "return"
+        },
+        {
+          "id": "n2492|n2494|belt",
+          "from": "n2492",
+          "to": "n2494",
+          "kind": "belt"
+        },
+        {
+          "id": "n2492|n11344|call",
+          "from": "n2492",
+          "to": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).FindMessageById",
+          "kind": "call"
+        },
+        {
+          "id": "n2492|n23061|disposal",
+          "from": "n2492",
+          "to": "n23061",
+          "kind": "disposal"
+        },
+        {
+          "id": "n2494|n2495|belt",
+          "from": "n2494",
+          "to": "n2495",
+          "kind": "belt"
+        },
+        {
+          "id": "n2495|n2497|belt",
+          "from": "n2495",
+          "to": "n2497",
+          "kind": "belt"
+        },
+        {
+          "id": "n2497|n23062|disposal",
+          "from": "n2497",
+          "to": "n23062",
+          "kind": "disposal"
+        },
+        {
+          "id": "n2527|n2486|memory",
+          "from": "n2527",
+          "to": "n2486",
+          "kind": "memory"
+        },
+        {
+          "id": "n2527|n2490|memory",
+          "from": "n2527",
+          "to": "n2490",
+          "kind": "memory"
+        },
+        {
+          "id": "n2527|n2499|memory",
+          "from": "n2527",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "memory"
+        },
+        {
+          "id": "n2552|n2554|belt",
+          "from": "n2552",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2552|n23072|disposal",
+          "from": "n2552",
+          "to": "n23072",
+          "kind": "disposal"
+        },
+        {
+          "id": "n2596|n2597|belt",
+          "from": "n2596",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2596|n23081|disposal",
+          "from": "n2596",
+          "to": "n23081",
+          "kind": "disposal"
+        },
+        {
+          "id": "n2657|n2659|belt",
+          "from": "n2657",
+          "to": "section-hub:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).collectAndProcessMessage:false",
+          "kind": "belt"
+        },
+        {
+          "id": "n2657|n23095|disposal",
+          "from": "n2657",
+          "to": "n23095",
+          "kind": "disposal"
+        },
+        {
+          "id": "n7243|n2477|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "to": "n2477",
+          "kind": "call"
+        },
+        {
+          "id": "n7298|n2479|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "to": "n2479",
+          "kind": "call"
+        },
+        {
+          "id": "n7302|n2478|call",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).retryFailedChunks",
+          "to": "n2478",
+          "kind": "call"
+        },
+        {
+          "id": "n7710|n2487|return",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/messenger.Messenger).tryProcessMsg",
+          "to": "n2487",
+          "kind": "return"
+        },
+        {
+          "id": "n11366|n2494|return",
+          "from": "portal:(*github.com/killbane1232/huginn-messenger/internal/store.SQLiteStore).FindMessageById",
+          "to": "n2494",
+          "kind": "return"
+        }
+      ]
+    }
+  }
+]

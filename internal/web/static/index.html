@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171d1b"><title>Fabririo — фабрика вашего кода</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Fabririo"><span class="brand-icon">F</span> FABRIRIO <span class="version">ALPHA 01</span></a>
+    <div class="breadcrumb"><span class="status-dot"></span><span id="project-title">Загрузка фабрики</span><span class="slash">/</span><span>Цех данных</span></div>
+    <div class="top-actions"><button id="help-btn" class="quiet" aria-label="Как это работает">?</button><button id="import-btn" class="quiet" disabled>↑ Импорт JSON</button><input id="import-file" type="file" accept=".json,application/json" hidden><button id="export-btn" class="quiet" disabled>↓ Экспорт</button><button id="open-btn" class="primary"><span>＋</span> Подключить проект</button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar">
+      <div class="section-label">ДИСПЕТЧЕРСКАЯ <span>01</span></div>
+      <h1>Код в движении<span>.</span></h1><p class="subtle intro">Каждое значение — груз.<br>Каждая функция — свой цех.</p>
+      <button id="all-btn" class="nav-overview active"><span>▦</span> Вся фабрика <span id="function-count" class="count">0</span></button>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Функция или переменная…" aria-label="Поиск функции или переменной"><kbd>/</kbd></label>
+      <div class="section-label modules-label">ПРОИЗВОДСТВЕННЫЕ ЛИНИИ</div>
+      <nav id="functions" aria-label="Функции проекта"></nav>
+      <div class="layers"><div class="section-label">ОБЪЕКТЫ ФАБРИКИ</div>
+        <label><span class="swatch amber"></span>Конвейеры<input type="checkbox" data-layer="belt" checked></label>
+        <label><span class="swatch teal"></span>Поезда · каналы<input type="checkbox" data-layer="train" checked></label>
+        <label><span class="swatch blue"></span>Склады · БД<input type="checkbox" data-layer="warehouse" checked></label>
+        <label><span class="swatch orange"></span>Ракеты · сеть<input type="checkbox" data-layer="rocket" checked></label>
+        <label><span class="swatch muted"></span>Утилизация<input type="checkbox" data-layer="trash" checked></label>
+      </div>
+      <button id="demo-btn" class="demo-link">↻ Открыть демофабрику <span>↗</span></button>
+      <div class="local-note"><span class="status-dot"></span> Локально на вашем компьютере</div>
+    </aside>
+    <section class="world" aria-label="Интерактивная фабрика">
+      <canvas id="factory" tabindex="0" aria-label="Фабрика данных. Перетаскивайте блоки для изменения положения или пустое место для перемещения карты; колесо меняет масштаб. Выбор объектов также доступен в списке."></canvas>
+      <div class="world-top"><div class="view-switch"><button id="compact-btn" class="selected">Фабрика</button><button id="detail-btn">Все операции SSA</button></div><div class="simulation-badge"><span class="status-dot"></span> СХЕМА ПОТОКОВ <span>·</span> SSA</div></div>
+      <div class="world-heading"><div class="eyebrow" id="world-eyebrow">GO → FACTORY</div><h2 id="view-title">Главная линия</h2><p id="view-subtitle">Построение маршрутов…</p><p id="optimization-status" hidden></p><button id="reflow-btn" class="quiet" disabled title="Заново разместить объекты текущего вида по зависимостям, включая вручную перемещённые блоки">↻ Перестроить по связям</button><p id="explorer-note" hidden></p><div id="section-controls" hidden><button id="section-prev" aria-label="Предыдущий участок">←</button><span id="section-label"></span><button id="section-all">Все участки</button><button id="section-next" aria-label="Следующий участок">→</button></div></div>
+      <div id="empty" class="empty" hidden>Нет объектов для текущего фильтра.</div>
+      <div id="tooltip" class="tooltip" hidden></div>
+      <div class="world-bottom"><div class="transport"><button id="play-btn" aria-label="Приостановить анимацию">Ⅱ</button><span class="divider"></span><button id="speed-btn" title="Скорость анимации">1×</button><span class="transport-label">ДВИЖЕНИЕ ГРУЗОВ</span></div><div class="camera-controls"><button id="zoom-out" aria-label="Уменьшить">−</button><span id="zoom-label">100%</span><button id="zoom-in" aria-label="Увеличить">＋</button><button id="fit-btn" aria-label="Показать всю фабрику" title="Вписать · F">⛶</button></div></div>
+      <div class="minimap-wrap"><canvas id="minimap" width="190" height="112" aria-label="Миникарта"></canvas><span>КАРТА ПРОИЗВОДСТВА</span></div>
+      <div class="map-caption">ПЕРЕТАЩИТЕ БЛОК ИЛИ КАРТУ · SHIFT — КАРТА · КОЛЕСО — МАСШТАБ</div>
+      <div id="loading" class="loading"><div class="loader"></div><strong>Прокладываем конвейеры</strong><span>Загрузка типов и построение SSA…</span></div>
+    </section>
+    <aside class="inspector" id="inspector"><div class="section-label">ИНСПЕКТОР ОБЪЕКТА <span>↗</span></div><details id="cargo-legend" class="cargo-legend" open hidden><summary>ТИПЫ ГРУЗОВ <span id="cargo-count"></span></summary><p>Фигура и вагон — тип данных.<br>Лента — те же цвета; общая — полосатая.</p><div id="cargo-types"></div></details><div id="inspection"></div></aside>
+  </main>
+  <footer class="statusbar"><div><span class="status-dot"></span><span id="status-text">Подготовка</span><span id="save-status" role="status"></span></div><div id="stats"></div><span>СТАТИЧЕСКАЯ МОДЕЛЬ · НЕ RUNTIME-ТРАССА</span></footer>
+  <dialog id="project-dialog"><form id="project-form"><div class="dialog-top"><div class="eyebrow">НОВАЯ ФАБРИКА</div><button type="button" class="quiet close-dialog" aria-label="Закрыть">✕</button></div><h2>Подключите Go-проекты</h2><p>Путь к корню модуля с <code>go.mod</code>. Для смежных проектов укажите несколько папок, по одной на строку.</p><label for="roots">ПАПКИ ПРОЕКТОВ</label><textarea id="roots" rows="4" placeholder="/home/you/projects/backend&#10;/home/you/projects/shared" required spellcheck="false"></textarea><label for="tags">BUILD TAGS <span>необязательно</span></label><input id="tags" placeholder="linux,integration" spellcheck="false"><p class="dialog-note">Исходники остаются на компьютере. Нужен установленный Go и загруженные зависимости. Анализатор создаст временный workspace для связей между модулями.</p><pre id="project-error" class="error" hidden></pre><div class="dialog-actions"><button type="button" class="quiet close-dialog">Отмена</button><button id="analyze-btn" class="primary" type="submit">Построить фабрику →</button></div></form></dialog>
+  <dialog id="help-dialog"><div class="dialog-top"><div class="eyebrow">КАК УСТРОЕН FABRIRIO</div><button class="quiet close-dialog" aria-label="Закрыть">✕</button></div><h2>Ваш код — производственная линия.</h2><p>Функции становятся цехами, операции — станками, значения — грузами на конвейерах. Нажмите на объект, чтобы увидеть его исходный код и связи.</p><div class="help-grid"><span>◈ Типы и цвета</span><p>Форма груза и вагона обозначает семейство типа Go, цвет — конкретный тип. Лента и мост окрашены в цвета перевозимых грузов; общие ленты полосатые. Легенда показывает типы текущей линии.</p><span>▧ Цвет блока</span><p>Один вызываемый метод — один цвет корпуса и фундамента. Другие операции получают цвет своей функции; он сохраняется при смене участка и масштаба.</p><span>▰ Конвейер</span><p>Зависимость между значениями SSA. Стрелки по всей ленте и мостам показывают направление даже на паузе. Пересечения проходят через мосты.</p><span>↻ Раскладка</span><p>Связанные объекты притягиваются друг к другу. Чем больше соседей у объекта, тем ближе он к центру своей группы. «Перестроить по связям» применяет новую раскладку к текущему виду, включая сохранённую фабрику.</p><span>⌒ Мост</span><p>Поднятая лента с въездами. Мосты не пересекаются между собой.</p><span>▣ Склад</span><p>Запись в SQL, GORM, MongoDB, Redis</p><span>↑ Ракета</span><p>Отправка HTTP, gRPC, WebRTC, WebSocket</p><span>═ Поезд</span><p>Состав с локомотивом и вагонами на рельсах между концами Go-канала.</p><span>▥ Мусорка</span><p>Один тайл: конец использования значения или delete.</p></div><p>Это статическая модель: движение грузов иллюстративно. Ветви, циклы и несколько вызывающих функций показывают возможные пути. Освобождение памяти и реальные значения без запуска программы не наблюдаются.</p><p>Для собственных обёрток добавьте перед функцией <code>//fabririo:rocket grpc</code> или <code>//fabririo:warehouse postgres</code>.</p><details><summary>Границы анализа</summary><ul id="warnings"></ul></details><p>Перетаскивайте блоки левой кнопкой: координаты привязываются к сетке, маршруты перестраиваются после отпускания. Пустое место, Shift + перетаскивание или средняя кнопка двигают карту. Esc отменяет перенос. Изменения автоматически сохраняются в этом браузере; «Экспорт → JSON» и «Импорт JSON» переносят фабрику между компьютерами.</p><div class="shortcuts"><kbd>Пробел</kbd> пауза <kbd>F</kbd> вписать <kbd>/</kbd> поиск <kbd>Esc</kbd> сбросить выбор</div></dialog>
+  <dialog id="source-dialog"><div class="dialog-top"><div class="eyebrow" id="source-path">ИСХОДНЫЙ КОД</div><button class="quiet close-dialog" aria-label="Закрыть">✕</button></div><pre id="full-source"></pre></dialog>
+  <dialog id="export-dialog"><form id="export-form">
+    <div class="dialog-top"><div class="eyebrow">СОХРАНИТЬ ФАБРИКУ</div><button type="button" class="quiet close-dialog" aria-label="Закрыть экспорт">✕</button></div>
+    <h2>Фабрика с собой</h2><p id="export-context"></p>
+    <fieldset id="export-options">
+      <label for="export-format">ФОРМАТ</label><select id="export-format"><option value="gif">GIF · анимация фабрики</option><option value="csv">CSV · объекты и маршруты</option><option value="json">JSON · состояние фабрики</option></select>
+      <div id="gif-options">
+        <label for="gif-region">ОБЛАСТЬ</label><select id="gif-region"><option value="viewport">Текущий вид карты</option><option value="scene">Вся построенная фабрика / участок</option></select>
+        <div class="export-grid"><div><label for="gif-size">РАЗМЕР</label><select id="gif-size"><option value="720p" selected>720p · 1280 × 720</option><option value="1080p">1080p · 1920 × 1080</option><option value="2k">2K / QHD · 2560 × 1440</option><option value="4k">4K · 3840 × 2160</option><option value="640">Компактный · 640 px</option><option value="960">Компактный · 960 px</option></select></div><div><label for="gif-duration">ДЛИТЕЛЬНОСТЬ</label><select id="gif-duration"><option value="3">3 секунды</option><option value="6" selected>6 секунд</option><option value="10">10 секунд</option></select></div><div><label for="gif-fps">ЧАСТОТА КАДРОВ</label><select id="gif-fps"><option value="10">10 кадров/с</option><option value="20">20 кадров/с</option></select></div></div>
+        <p class="dialog-note">Стандартные пресеты — точный кадр 16:9. Текущий вид вписывается целиком с полями, без растягивания; компактные размеры — по длинной стороне. GIF повторяется по кругу и сохраняет текущую скорость, цвета и подсветку. Движение записывается даже при паузе на карте. Экспортируется открытый участок, без панелей интерфейса.</p>
+      </div>
+      <div id="csv-options" hidden>
+        <label for="csv-scope">СОДЕРЖИМОЕ</label><select id="csv-scope"><option value="scene">Построенная фабрика / участок</option><option value="project">Полный граф проекта (SSA)</option></select>
+        <label for="csv-delimiter">РАЗДЕЛИТЕЛЬ</label><select id="csv-delimiter"><option value=",">Запятая</option><option value=";">Точка с запятой</option></select>
+        <p class="dialog-note">Один файл UTF-8: строки node — объекты, edge — связи. Включены типы, цвета и исходники; для построенной фабрики — координаты, ленты, рельсы и мосты. Полный граф содержит все операции, в том числе скрытые; без раскладки.</p>
+      </div>
+      <p id="json-note" class="dialog-note" hidden>Снимок для восстановления через «Импорт JSON»: полный граф, исходники, раскладки всех посещённых цехов и участков, камера, фильтры и анимация. Файл включает содержимое исходников. Старый JSON графа также можно импортировать — с автоматической раскладкой.</p>
+    </fieldset>
+    <div id="export-progress-wrap" hidden><progress id="export-progress" max="1" value="0" aria-label="Прогресс экспорта"></progress><p id="export-message" role="status" aria-live="polite"></p></div>
+    <p id="export-error" class="error" role="alert" hidden></p>
+    <div id="export-ready" hidden><p id="export-ready-label" role="status"></p><img id="export-preview" alt="Предпросмотр анимации фабрики" hidden><a id="export-download" download>Скачать файл</a><p class="dialog-note">Если загрузка не началась автоматически, нажмите ссылку.</p></div>
+    <div class="dialog-actions"><button type="button" class="quiet" id="export-cancel" hidden>Отменить экспорт</button><button type="button" class="quiet close-dialog">Закрыть</button><button id="export-start" class="primary" type="submit">Скачать GIF</button></div>
+  </form></dialog>
+  <div id="toast" role="status" hidden></div>
+  <script type="module" src="/app.js"></script>
+</body></html>

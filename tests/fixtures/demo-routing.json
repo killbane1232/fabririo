@@ -1,0 +1,1472 @@
+{
+  "functions": [
+    {
+      "id": "forge.local/dispatch.Produce",
+      "name": "Produce",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.Run",
+      "name": "Run",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.SendGRPC",
+      "name": "SendGRPC",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.SendHTTP",
+      "name": "SendHTTP",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.SendWebRTC",
+      "name": "SendWebRTC",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.SendWebSocket",
+      "name": "SendWebSocket",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/dispatch.init",
+      "name": "init",
+      "package": "forge.local/dispatch"
+    },
+    {
+      "id": "forge.local/ledger.Save",
+      "name": "Save",
+      "package": "forge.local/ledger"
+    },
+    {
+      "id": "forge.local/ledger.init",
+      "name": "init",
+      "package": "forge.local/ledger"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "source",
+      "function": "forge.local/dispatch.Produce",
+      "label": "queue",
+      "order": -1
+    },
+    {
+      "id": "n2",
+      "kind": "source",
+      "function": "forge.local/dispatch.Produce",
+      "label": "cargo",
+      "order": -1
+    },
+    {
+      "id": "n3",
+      "kind": "station",
+      "function": "forge.local/dispatch.Produce",
+      "label": "Отправить · queue",
+      "order": 0
+    },
+    {
+      "id": "n4",
+      "kind": "station",
+      "function": "forge.local/dispatch.Produce",
+      "label": "close · закрыть станцию",
+      "order": 1
+    },
+    {
+      "id": "n5",
+      "kind": "output",
+      "function": "forge.local/dispatch.Produce",
+      "label": "Возврат",
+      "order": 2
+    },
+    {
+      "id": "n6",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "ctx",
+      "order": -1
+    },
+    {
+      "id": "n7",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "db",
+      "order": -1
+    },
+    {
+      "id": "n8",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "raw",
+      "order": -1
+    },
+    {
+      "id": "n9",
+      "kind": "station",
+      "function": "forge.local/dispatch.Run",
+      "label": "Канал · parcels",
+      "order": 0
+    },
+    {
+      "id": "n10",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "strings.TrimSpace",
+      "order": 1
+    },
+    {
+      "id": "n11",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "packed · +",
+      "order": 2
+    },
+    {
+      "id": "n12",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "Обработка",
+      "order": 3,
+      "helper": true
+    },
+    {
+      "id": "n13",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "go · forge.local/dispatch.Produce",
+      "order": 4
+    },
+    {
+      "id": "n14",
+      "kind": "station",
+      "function": "forge.local/dispatch.Run",
+      "label": "Получить · parcels",
+      "order": 5
+    },
+    {
+      "id": "n15",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "forge.local/ledger.Save",
+      "order": 6
+    },
+    {
+      "id": "n16",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "forge.local/dispatch.SendHTTP",
+      "order": 7
+    },
+    {
+      "id": "n17",
+      "kind": "rocket",
+      "function": "forge.local/dispatch.Run",
+      "label": "forge.local/dispatch.SendGRPC",
+      "order": 8
+    },
+    {
+      "id": "n18",
+      "kind": "rocket",
+      "function": "forge.local/dispatch.Run",
+      "label": "forge.local/dispatch.SendWebRTC",
+      "order": 9
+    },
+    {
+      "id": "n19",
+      "kind": "rocket",
+      "function": "forge.local/dispatch.Run",
+      "label": "forge.local/dispatch.SendWebSocket",
+      "order": 10
+    },
+    {
+      "id": "n20",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "cache",
+      "order": -1
+    },
+    {
+      "id": "n21",
+      "kind": "machine",
+      "function": "forge.local/dispatch.Run",
+      "label": "cache",
+      "order": 11
+    },
+    {
+      "id": "n22",
+      "kind": "memory",
+      "function": "forge.local/dispatch.Run",
+      "label": "Запись в map",
+      "order": 12
+    },
+    {
+      "id": "n23",
+      "kind": "trash",
+      "function": "forge.local/dispatch.Run",
+      "label": "delete · удалить",
+      "order": 13
+    },
+    {
+      "id": "n24",
+      "kind": "output",
+      "function": "forge.local/dispatch.Run",
+      "label": "Возврат",
+      "order": 14
+    },
+    {
+      "id": "n25",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendGRPC",
+      "label": "parcel",
+      "order": -1
+    },
+    {
+      "id": "n26",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendGRPC",
+      "label": "Возврат",
+      "order": 0
+    },
+    {
+      "id": "n27",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "ctx",
+      "order": -1
+    },
+    {
+      "id": "n28",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "parcel",
+      "order": -1
+    },
+    {
+      "id": "n29",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "strings.NewReader",
+      "order": 0
+    },
+    {
+      "id": "n30",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Обработка",
+      "order": 1,
+      "helper": true
+    },
+    {
+      "id": "n31",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "net/http.NewRequestWithContext",
+      "order": 2
+    },
+    {
+      "id": "n32",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "request",
+      "order": 3
+    },
+    {
+      "id": "n33",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "err",
+      "order": 4
+    },
+    {
+      "id": "n34",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "!=",
+      "order": 5
+    },
+    {
+      "id": "n35",
+      "kind": "splitter",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Условие",
+      "order": 6
+    },
+    {
+      "id": "n36",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Возврат",
+      "order": 7
+    },
+    {
+      "id": "n37",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Обработка",
+      "order": 8,
+      "helper": true
+    },
+    {
+      "id": "n38",
+      "kind": "rocket",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "(*net/http.Client).Do",
+      "order": 9
+    },
+    {
+      "id": "n39",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "response",
+      "order": 10
+    },
+    {
+      "id": "n40",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "err",
+      "order": 11
+    },
+    {
+      "id": "n41",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "!=",
+      "order": 12
+    },
+    {
+      "id": "n42",
+      "kind": "splitter",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Условие",
+      "order": 13
+    },
+    {
+      "id": "n43",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Возврат",
+      "order": 14
+    },
+    {
+      "id": "n44",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Body",
+      "order": 15
+    },
+    {
+      "id": "n45",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Обработка",
+      "order": 16,
+      "helper": true
+    },
+    {
+      "id": "n46",
+      "kind": "machine",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Close",
+      "order": 17
+    },
+    {
+      "id": "n47",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Возврат",
+      "order": 18
+    },
+    {
+      "id": "n48",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendWebRTC",
+      "label": "parcel",
+      "order": -1
+    },
+    {
+      "id": "n49",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendWebRTC",
+      "label": "Возврат",
+      "order": 0
+    },
+    {
+      "id": "n50",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendWebSocket",
+      "label": "parcel",
+      "order": -1
+    },
+    {
+      "id": "n51",
+      "kind": "output",
+      "function": "forge.local/dispatch.SendWebSocket",
+      "label": "Возврат",
+      "order": 0
+    },
+    {
+      "id": "n52",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "Обработка",
+      "order": 0,
+      "helper": true
+    },
+    {
+      "id": "n53",
+      "kind": "splitter",
+      "function": "forge.local/dispatch.init",
+      "label": "Условие",
+      "order": 1
+    },
+    {
+      "id": "n54",
+      "kind": "memory",
+      "function": "forge.local/dispatch.init",
+      "label": "Запись в память",
+      "order": 2,
+      "helper": true
+    },
+    {
+      "id": "n55",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "context.init",
+      "order": 3
+    },
+    {
+      "id": "n56",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "database/sql.init",
+      "order": 4
+    },
+    {
+      "id": "n57",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "net/http.init",
+      "order": 5
+    },
+    {
+      "id": "n58",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "strings.init",
+      "order": 6
+    },
+    {
+      "id": "n59",
+      "kind": "machine",
+      "function": "forge.local/dispatch.init",
+      "label": "forge.local/ledger.init",
+      "order": 7
+    },
+    {
+      "id": "n60",
+      "kind": "output",
+      "function": "forge.local/dispatch.init",
+      "label": "Возврат",
+      "order": 8
+    },
+    {
+      "id": "n61",
+      "kind": "source",
+      "function": "forge.local/ledger.Save",
+      "label": "ctx",
+      "order": -1
+    },
+    {
+      "id": "n62",
+      "kind": "source",
+      "function": "forge.local/ledger.Save",
+      "label": "db",
+      "order": -1
+    },
+    {
+      "id": "n63",
+      "kind": "source",
+      "function": "forge.local/ledger.Save",
+      "label": "parcel",
+      "order": -1
+    },
+    {
+      "id": "n64",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "Выделение памяти",
+      "order": 0,
+      "helper": true
+    },
+    {
+      "id": "n65",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "Обработка",
+      "order": 1,
+      "helper": true
+    },
+    {
+      "id": "n66",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "Обработка",
+      "order": 2,
+      "helper": true
+    },
+    {
+      "id": "n67",
+      "kind": "memory",
+      "function": "forge.local/ledger.Save",
+      "label": "Запись в память",
+      "order": 3,
+      "helper": true
+    },
+    {
+      "id": "n68",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "Обработка",
+      "order": 4,
+      "helper": true
+    },
+    {
+      "id": "n69",
+      "kind": "warehouse",
+      "function": "forge.local/ledger.Save",
+      "label": "(*database/sql.DB).ExecContext",
+      "order": 5
+    },
+    {
+      "id": "n70",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "Обработка",
+      "order": 6,
+      "helper": true
+    },
+    {
+      "id": "n71",
+      "kind": "machine",
+      "function": "forge.local/ledger.Save",
+      "label": "err",
+      "order": 7
+    },
+    {
+      "id": "n72",
+      "kind": "output",
+      "function": "forge.local/ledger.Save",
+      "label": "Возврат",
+      "order": 8
+    },
+    {
+      "id": "n73",
+      "kind": "machine",
+      "function": "forge.local/ledger.init",
+      "label": "Обработка",
+      "order": 0,
+      "helper": true
+    },
+    {
+      "id": "n74",
+      "kind": "splitter",
+      "function": "forge.local/ledger.init",
+      "label": "Условие",
+      "order": 1
+    },
+    {
+      "id": "n75",
+      "kind": "memory",
+      "function": "forge.local/ledger.init",
+      "label": "Запись в память",
+      "order": 2,
+      "helper": true
+    },
+    {
+      "id": "n76",
+      "kind": "machine",
+      "function": "forge.local/ledger.init",
+      "label": "context.init",
+      "order": 3
+    },
+    {
+      "id": "n77",
+      "kind": "machine",
+      "function": "forge.local/ledger.init",
+      "label": "database/sql.init",
+      "order": 4
+    },
+    {
+      "id": "n78",
+      "kind": "output",
+      "function": "forge.local/ledger.init",
+      "label": "Возврат",
+      "order": 5
+    },
+    {
+      "id": "n79",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "4:int",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n80",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "\"parcel:\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n81",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "1:int",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n82",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "\"parcel\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n83",
+      "kind": "source",
+      "function": "forge.local/dispatch.Run",
+      "label": "\"parcel\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n84",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "\"POST\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n85",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "\"https://example.c...\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n86",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "nil:error",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n87",
+      "kind": "memory",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "DefaultClient",
+      "order": -1
+    },
+    {
+      "id": "n88",
+      "kind": "source",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "nil:error",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n89",
+      "kind": "memory",
+      "function": "forge.local/dispatch.init",
+      "label": "init$guard",
+      "order": -1
+    },
+    {
+      "id": "n90",
+      "kind": "source",
+      "function": "forge.local/dispatch.init",
+      "label": "true:bool",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n91",
+      "kind": "source",
+      "function": "forge.local/ledger.Save",
+      "label": "0:int",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n92",
+      "kind": "source",
+      "function": "forge.local/ledger.Save",
+      "label": "\"INSERT INTO parce...\":string",
+      "order": -1,
+      "helper": true
+    },
+    {
+      "id": "n93",
+      "kind": "memory",
+      "function": "forge.local/ledger.init",
+      "label": "init$guard",
+      "order": -1
+    },
+    {
+      "id": "n94",
+      "kind": "trash",
+      "function": "forge.local/dispatch.Run",
+      "label": "Утилизация · clean",
+      "order": 3
+    },
+    {
+      "id": "n95",
+      "kind": "trash",
+      "function": "forge.local/dispatch.Run",
+      "label": "Утилизация · cache",
+      "order": 0
+    },
+    {
+      "id": "n96",
+      "kind": "trash",
+      "function": "forge.local/dispatch.SendGRPC",
+      "label": "Утилизация · parcel",
+      "order": 0
+    },
+    {
+      "id": "n97",
+      "kind": "trash",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Утилизация · response",
+      "order": 16
+    },
+    {
+      "id": "n98",
+      "kind": "trash",
+      "function": "forge.local/dispatch.SendHTTP",
+      "label": "Утилизация · Body",
+      "order": 17
+    },
+    {
+      "id": "n99",
+      "kind": "trash",
+      "function": "forge.local/dispatch.SendWebRTC",
+      "label": "Утилизация · parcel",
+      "order": 0
+    },
+    {
+      "id": "n100",
+      "kind": "trash",
+      "function": "forge.local/dispatch.SendWebSocket",
+      "label": "Утилизация · parcel",
+      "order": 0
+    },
+    {
+      "id": "n101",
+      "kind": "trash",
+      "function": "forge.local/ledger.Save",
+      "label": "Утилизация · parcel",
+      "order": 3
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "n1",
+      "to": "n3",
+      "kind": "belt",
+      "label": "queue"
+    },
+    {
+      "id": "e2",
+      "from": "n2",
+      "to": "n3",
+      "kind": "belt",
+      "label": "cargo"
+    },
+    {
+      "id": "e3",
+      "from": "n1",
+      "to": "n4",
+      "kind": "belt",
+      "label": "queue"
+    },
+    {
+      "id": "e4",
+      "from": "n79",
+      "to": "n9",
+      "kind": "belt",
+      "label": "4:int"
+    },
+    {
+      "id": "e5",
+      "from": "n8",
+      "to": "n10",
+      "kind": "belt",
+      "label": "raw"
+    },
+    {
+      "id": "e6",
+      "from": "n80",
+      "to": "n11",
+      "kind": "belt",
+      "label": "\"parcel:\":string"
+    },
+    {
+      "id": "e7",
+      "from": "n10",
+      "to": "n11",
+      "kind": "belt",
+      "label": "clean"
+    },
+    {
+      "id": "e8",
+      "from": "n9",
+      "to": "n12",
+      "kind": "belt",
+      "label": "parcels"
+    },
+    {
+      "id": "e9",
+      "from": "n12",
+      "to": "n13",
+      "kind": "belt",
+      "label": "t3"
+    },
+    {
+      "id": "e10",
+      "from": "n11",
+      "to": "n13",
+      "kind": "belt",
+      "label": "packed"
+    },
+    {
+      "id": "e11",
+      "from": "n12",
+      "to": "n1",
+      "kind": "call",
+      "label": "t3 → queue"
+    },
+    {
+      "id": "e12",
+      "from": "n11",
+      "to": "n2",
+      "kind": "call",
+      "label": "packed → cargo"
+    },
+    {
+      "id": "e13",
+      "from": "n9",
+      "to": "n14",
+      "kind": "belt",
+      "label": "parcels"
+    },
+    {
+      "id": "e14",
+      "from": "n6",
+      "to": "n15",
+      "kind": "belt",
+      "label": "ctx"
+    },
+    {
+      "id": "e15",
+      "from": "n7",
+      "to": "n15",
+      "kind": "belt",
+      "label": "db"
+    },
+    {
+      "id": "e16",
+      "from": "n14",
+      "to": "n15",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e17",
+      "from": "n6",
+      "to": "n61",
+      "kind": "call",
+      "label": "ctx → ctx"
+    },
+    {
+      "id": "e18",
+      "from": "n7",
+      "to": "n62",
+      "kind": "call",
+      "label": "db → db"
+    },
+    {
+      "id": "e19",
+      "from": "n14",
+      "to": "n63",
+      "kind": "call",
+      "label": "parcel → parcel"
+    },
+    {
+      "id": "e20",
+      "from": "n72",
+      "to": "n15",
+      "kind": "return",
+      "label": "результат"
+    },
+    {
+      "id": "e21",
+      "from": "n6",
+      "to": "n16",
+      "kind": "belt",
+      "label": "ctx"
+    },
+    {
+      "id": "e22",
+      "from": "n14",
+      "to": "n16",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e23",
+      "from": "n6",
+      "to": "n27",
+      "kind": "call",
+      "label": "ctx → ctx"
+    },
+    {
+      "id": "e24",
+      "from": "n14",
+      "to": "n28",
+      "kind": "call",
+      "label": "parcel → parcel"
+    },
+    {
+      "id": "e25",
+      "from": "n36",
+      "to": "n16",
+      "kind": "return",
+      "label": "результат"
+    },
+    {
+      "id": "e26",
+      "from": "n43",
+      "to": "n16",
+      "kind": "return",
+      "label": "результат"
+    },
+    {
+      "id": "e27",
+      "from": "n47",
+      "to": "n16",
+      "kind": "return",
+      "label": "результат"
+    },
+    {
+      "id": "e28",
+      "from": "n14",
+      "to": "n17",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e29",
+      "from": "n14",
+      "to": "n25",
+      "kind": "call",
+      "label": "parcel → parcel"
+    },
+    {
+      "id": "e30",
+      "from": "n14",
+      "to": "n18",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e31",
+      "from": "n14",
+      "to": "n48",
+      "kind": "call",
+      "label": "parcel → parcel"
+    },
+    {
+      "id": "e32",
+      "from": "n14",
+      "to": "n19",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e33",
+      "from": "n14",
+      "to": "n50",
+      "kind": "call",
+      "label": "parcel → parcel"
+    },
+    {
+      "id": "e34",
+      "from": "n81",
+      "to": "n21",
+      "kind": "belt",
+      "label": "1:int"
+    },
+    {
+      "id": "e35",
+      "from": "n21",
+      "to": "n22",
+      "kind": "belt",
+      "label": "cache"
+    },
+    {
+      "id": "e36",
+      "from": "n82",
+      "to": "n22",
+      "kind": "belt",
+      "label": "\"parcel\":string"
+    },
+    {
+      "id": "e37",
+      "from": "n14",
+      "to": "n22",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e38",
+      "from": "n21",
+      "to": "n23",
+      "kind": "belt",
+      "label": "cache"
+    },
+    {
+      "id": "e39",
+      "from": "n83",
+      "to": "n23",
+      "kind": "belt",
+      "label": "\"parcel\":string"
+    },
+    {
+      "id": "e40",
+      "from": "n15",
+      "to": "n24",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e41",
+      "from": "n28",
+      "to": "n29",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e42",
+      "from": "n29",
+      "to": "n30",
+      "kind": "belt",
+      "label": "t0"
+    },
+    {
+      "id": "e43",
+      "from": "n27",
+      "to": "n31",
+      "kind": "belt",
+      "label": "ctx"
+    },
+    {
+      "id": "e44",
+      "from": "n84",
+      "to": "n31",
+      "kind": "belt",
+      "label": "\"POST\":string"
+    },
+    {
+      "id": "e45",
+      "from": "n85",
+      "to": "n31",
+      "kind": "belt",
+      "label": "\"https://example.c...\":string"
+    },
+    {
+      "id": "e46",
+      "from": "n30",
+      "to": "n31",
+      "kind": "belt",
+      "label": "t1"
+    },
+    {
+      "id": "e47",
+      "from": "n31",
+      "to": "n32",
+      "kind": "belt",
+      "label": "t2"
+    },
+    {
+      "id": "e48",
+      "from": "n31",
+      "to": "n33",
+      "kind": "belt",
+      "label": "t2"
+    },
+    {
+      "id": "e49",
+      "from": "n33",
+      "to": "n34",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e50",
+      "from": "n86",
+      "to": "n34",
+      "kind": "belt",
+      "label": "nil:error"
+    },
+    {
+      "id": "e51",
+      "from": "n34",
+      "to": "n35",
+      "kind": "belt",
+      "label": "t5"
+    },
+    {
+      "id": "e52",
+      "from": "n33",
+      "to": "n36",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e53",
+      "from": "n87",
+      "to": "n37",
+      "kind": "belt",
+      "label": "DefaultClient"
+    },
+    {
+      "id": "e54",
+      "from": "n37",
+      "to": "n38",
+      "kind": "belt",
+      "label": "t6"
+    },
+    {
+      "id": "e55",
+      "from": "n32",
+      "to": "n38",
+      "kind": "belt",
+      "label": "request"
+    },
+    {
+      "id": "e56",
+      "from": "n38",
+      "to": "n39",
+      "kind": "belt",
+      "label": "t7"
+    },
+    {
+      "id": "e57",
+      "from": "n38",
+      "to": "n40",
+      "kind": "belt",
+      "label": "t7"
+    },
+    {
+      "id": "e58",
+      "from": "n40",
+      "to": "n41",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e59",
+      "from": "n88",
+      "to": "n41",
+      "kind": "belt",
+      "label": "nil:error"
+    },
+    {
+      "id": "e60",
+      "from": "n41",
+      "to": "n42",
+      "kind": "belt",
+      "label": "t10"
+    },
+    {
+      "id": "e61",
+      "from": "n40",
+      "to": "n43",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e62",
+      "from": "n39",
+      "to": "n44",
+      "kind": "belt",
+      "label": "response"
+    },
+    {
+      "id": "e63",
+      "from": "n44",
+      "to": "n45",
+      "kind": "belt",
+      "label": "Body"
+    },
+    {
+      "id": "e64",
+      "from": "n45",
+      "to": "n46",
+      "kind": "belt",
+      "label": "t12"
+    },
+    {
+      "id": "e65",
+      "from": "n46",
+      "to": "n47",
+      "kind": "belt",
+      "label": "t13"
+    },
+    {
+      "id": "e66",
+      "from": "n89",
+      "to": "n52",
+      "kind": "belt",
+      "label": "init$guard"
+    },
+    {
+      "id": "e67",
+      "from": "n52",
+      "to": "n53",
+      "kind": "belt",
+      "label": "t0"
+    },
+    {
+      "id": "e68",
+      "from": "n89",
+      "to": "n54",
+      "kind": "belt",
+      "label": "init$guard"
+    },
+    {
+      "id": "e69",
+      "from": "n90",
+      "to": "n54",
+      "kind": "belt",
+      "label": "true:bool"
+    },
+    {
+      "id": "e70",
+      "from": "n59",
+      "to": "n73",
+      "kind": "call",
+      "label": "вызов"
+    },
+    {
+      "id": "e71",
+      "from": "n64",
+      "to": "n65",
+      "kind": "belt",
+      "label": "t0"
+    },
+    {
+      "id": "e72",
+      "from": "n91",
+      "to": "n65",
+      "kind": "belt",
+      "label": "0:int"
+    },
+    {
+      "id": "e73",
+      "from": "n63",
+      "to": "n66",
+      "kind": "belt",
+      "label": "parcel"
+    },
+    {
+      "id": "e74",
+      "from": "n65",
+      "to": "n67",
+      "kind": "belt",
+      "label": "t1"
+    },
+    {
+      "id": "e75",
+      "from": "n66",
+      "to": "n67",
+      "kind": "belt",
+      "label": "t2"
+    },
+    {
+      "id": "e76",
+      "from": "n64",
+      "to": "n68",
+      "kind": "belt",
+      "label": "t0"
+    },
+    {
+      "id": "e77",
+      "from": "n62",
+      "to": "n69",
+      "kind": "belt",
+      "label": "db"
+    },
+    {
+      "id": "e78",
+      "from": "n61",
+      "to": "n69",
+      "kind": "belt",
+      "label": "ctx"
+    },
+    {
+      "id": "e79",
+      "from": "n92",
+      "to": "n69",
+      "kind": "belt",
+      "label": "\"INSERT INTO parce...\":string"
+    },
+    {
+      "id": "e80",
+      "from": "n68",
+      "to": "n69",
+      "kind": "belt",
+      "label": "t3"
+    },
+    {
+      "id": "e81",
+      "from": "n69",
+      "to": "n70",
+      "kind": "belt",
+      "label": "t4"
+    },
+    {
+      "id": "e82",
+      "from": "n69",
+      "to": "n71",
+      "kind": "belt",
+      "label": "t4"
+    },
+    {
+      "id": "e83",
+      "from": "n71",
+      "to": "n72",
+      "kind": "belt",
+      "label": "err"
+    },
+    {
+      "id": "e84",
+      "from": "n93",
+      "to": "n73",
+      "kind": "belt",
+      "label": "init$guard"
+    },
+    {
+      "id": "e85",
+      "from": "n73",
+      "to": "n74",
+      "kind": "belt",
+      "label": "t0"
+    },
+    {
+      "id": "e86",
+      "from": "n93",
+      "to": "n75",
+      "kind": "belt",
+      "label": "init$guard"
+    },
+    {
+      "id": "e87",
+      "from": "n90",
+      "to": "n75",
+      "kind": "belt",
+      "label": "true:bool"
+    },
+    {
+      "id": "e88",
+      "from": "n54",
+      "to": "n52",
+      "kind": "memory",
+      "label": "память"
+    },
+    {
+      "id": "e89",
+      "from": "n75",
+      "to": "n73",
+      "kind": "memory",
+      "label": "память"
+    },
+    {
+      "id": "e90",
+      "from": "n3",
+      "to": "n14",
+      "kind": "train",
+      "label": "queue"
+    },
+    {
+      "id": "e91",
+      "from": "n11",
+      "to": "n94",
+      "kind": "disposal",
+      "label": "clean"
+    },
+    {
+      "id": "e92",
+      "from": "n20",
+      "to": "n95",
+      "kind": "disposal",
+      "label": "cache"
+    },
+    {
+      "id": "e93",
+      "from": "n25",
+      "to": "n96",
+      "kind": "disposal",
+      "label": "parcel"
+    },
+    {
+      "id": "e94",
+      "from": "n44",
+      "to": "n97",
+      "kind": "disposal",
+      "label": "response"
+    },
+    {
+      "id": "e95",
+      "from": "n45",
+      "to": "n98",
+      "kind": "disposal",
+      "label": "Body"
+    },
+    {
+      "id": "e96",
+      "from": "n48",
+      "to": "n99",
+      "kind": "disposal",
+      "label": "parcel"
+    },
+    {
+      "id": "e97",
+      "from": "n50",
+      "to": "n100",
+      "kind": "disposal",
+      "label": "parcel"
+    },
+    {
+      "id": "e98",
+      "from": "n66",
+      "to": "n101",
+      "kind": "disposal",
+      "label": "parcel"
+    }
+  ]
+}

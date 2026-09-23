@@ -1,0 +1,56 @@
+// Package dispatch demonstrates data flow. Fabririo analyzes it without running it.
+package dispatch
+
+import (
+    "context"
+    "database/sql"
+    "net/http"
+    "strings"
+
+    "forge.local/ledger"
+)
+
+// Run — главная линия: сырьё, обработка, поезд, склад и ракеты.
+func Run(ctx context.Context, db *sql.DB, raw string) error {
+    parcels := make(chan string, 4)
+    clean := strings.TrimSpace(raw)
+    packed := "parcel:" + clean
+    go Produce(parcels, packed)
+    parcel := <-parcels
+
+    err := ledger.Save(ctx, db, parcel)
+    SendHTTP(ctx, parcel)
+    SendGRPC(parcel)
+    SendWebRTC(parcel)
+    SendWebSocket(parcel)
+
+    cache := map[string]string{"parcel": parcel}
+    delete(cache, "parcel")
+    return err
+}
+
+// SendHTTP отправляет груз по сети. Анализатор не выполняет этот код.
+func SendHTTP(ctx context.Context, parcel string) error {
+    request, err := http.NewRequestWithContext(ctx, "POST", "https://example.com/parcels", strings.NewReader(parcel))
+    if err != nil { return err }
+    response, err := http.DefaultClient.Do(request)
+    if err != nil { return err }
+    return response.Body.Close()
+}
+
+func Produce(queue chan<- string, cargo string) {
+    queue <- cargo
+    close(queue)
+}
+
+// The demo uses explicit annotations for adapters without third-party dependencies.
+// Real grpc / Pion / WebSocket API calls are recognized by their package and type.
+
+//fabririo:rocket grpc
+func SendGRPC(parcel string) { _ = parcel }
+
+//fabririo:rocket webrtc
+func SendWebRTC(parcel string) { _ = parcel }
+
+//fabririo:rocket websocket
+func SendWebSocket(parcel string) { _ = parcel }
